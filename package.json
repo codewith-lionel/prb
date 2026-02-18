@@ -1,0 +1,22 @@
+{
+  "name": "iblaze-platform",
+  "version": "1.0.0",
+  "description": "iBLAZE - IdeaVault Platform - Full Stack MERN Application",
+  "scripts": {
+    "install-all": "npm install --prefix server && npm install --prefix client && npm install --prefix admin",
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "admin": "npm run dev --prefix admin",
+    "build-all": "npm run build --prefix client && npm run build --prefix admin"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "iblaze"
+  ],
+  "author": "",
+  "license": "MIT"
+}
