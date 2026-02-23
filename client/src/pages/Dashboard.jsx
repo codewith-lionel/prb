@@ -35,68 +35,111 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {user.role === 'student' && (
             <>
-              <div className="glass p-6 rounded-xl">
+              <a href="/ideas" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">💡</div>
                 <h3 className="text-xl font-semibold mb-2">Browse Ideas</h3>
-                <p className="text-gray-400 mb-4">Discover innovative ideas</p>
-                <a href="/ideas" className="text-primary hover:underline">
+                <p className="text-gray-400 mb-4">Discover innovative ideas from fellow students</p>
+                <span className="text-primary hover:underline">
                   View Ideas →
-                </a>
-              </div>
+                </span>
+              </a>
 
-              <div className="glass p-6 rounded-xl">
+              <a href="/submit-idea" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">✨</div>
+                <h3 className="text-xl font-semibold mb-2">Submit Your Idea</h3>
+                <p className="text-gray-400 mb-4">Share your innovation with investors</p>
+                <span className="text-primary hover:underline">
+                  Submit Idea →
+                </span>
+              </a>
+
+              <a href="/my-ideas" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">📋</div>
+                <h3 className="text-xl font-semibold mb-2">My Ideas</h3>
+                <p className="text-gray-400 mb-4">Manage your submitted ideas</p>
+                <span className="text-primary hover:underline">
+                  View My Ideas →
+                </span>
+              </a>
+
+              <a href="/jobs" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">💼</div>
                 <h3 className="text-xl font-semibold mb-2">Find Jobs</h3>
                 <p className="text-gray-400 mb-4">Apply to exciting opportunities</p>
-                <a href="/jobs" className="text-primary hover:underline">
+                <span className="text-primary hover:underline">
                   Browse Jobs →
-                </a>
-              </div>
+                </span>
+              </a>
 
-              <div className="glass p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-2">Submit Your Idea</h3>
-                <p className="text-gray-400 mb-4">Share your innovation</p>
-                <a href="/my-ideas" className="text-primary hover:underline">
-                  My Ideas →
-                </a>
-              </div>
+              <a href="/my-applications" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">📄</div>
+                <h3 className="text-xl font-semibold mb-2">My Applications</h3>
+                <p className="text-gray-400 mb-4">Track your job applications</p>
+                <span className="text-primary hover:underline">
+                  View Applications →
+                </span>
+              </a>
             </>
           )}
 
           {user.role === 'investor' && (
             <>
-              <div className="glass p-6 rounded-xl">
+              <a href="/ideas" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">💡</div>
                 <h3 className="text-xl font-semibold mb-2">Browse Ideas</h3>
                 <p className="text-gray-400 mb-4">Find investment opportunities</p>
-                <a href="/ideas" className="text-primary hover:underline">
+                <span className="text-primary hover:underline">
                   View Ideas →
-                </a>
-              </div>
+                </span>
+              </a>
 
-              <div className="glass p-6 rounded-xl">
+              <a href="/my-requests" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">📨</div>
                 <h3 className="text-xl font-semibold mb-2">My Requests</h3>
                 <p className="text-gray-400 mb-4">Track your access requests</p>
-                <a href="/my-requests" className="text-primary hover:underline">
+                <span className="text-primary hover:underline">
                   View Requests →
-                </a>
+                </span>
+              </a>
+
+              <div className="glass p-6 rounded-xl border-white/10">
+                <div className="text-4xl mb-3">📊</div>
+                <h3 className="text-xl font-semibold mb-2">Analytics</h3>
+                <p className="text-gray-400 mb-4">View your investment insights</p>
+                <span className="text-gray-500">
+                  Coming Soon
+                </span>
               </div>
             </>
           )}
 
           {user.role === 'employer' && (
             <>
-              <div className="glass p-6 rounded-xl">
+              <a href="/post-job" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">➕</div>
                 <h3 className="text-xl font-semibold mb-2">Post a Job</h3>
                 <p className="text-gray-400 mb-4">Find talented candidates</p>
-                <a href="/create-job" className="text-primary hover:underline">
+                <span className="text-primary hover:underline">
                   Create Job →
-                </a>
-              </div>
+                </span>
+              </a>
 
-              <div className="glass p-6 rounded-xl">
+              <a href="/my-jobs" className="glass p-6 rounded-xl hover:border-primary/50 transition cursor-pointer">
+                <div className="text-4xl mb-3">💼</div>
                 <h3 className="text-xl font-semibold mb-2">My Jobs</h3>
                 <p className="text-gray-400 mb-4">Manage your job postings</p>
-                <a href="/my-jobs" className="text-primary hover:underline">
+                <span className="text-primary hover:underline">
                   View Jobs →
-                </a>
+                </span>
+              </a>
+
+              <div className="glass p-6 rounded-xl border-white/10">
+                <div className="text-4xl mb-3">📈</div>
+                <h3 className="text-xl font-semibold mb-2">Applications</h3>
+                <p className="text-gray-400 mb-4">Review candidate applications</p>
+                <span className="text-gray-500">
+                  View in My Jobs
+                </span>
               </div>
             </>
           )}

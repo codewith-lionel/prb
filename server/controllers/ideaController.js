@@ -5,6 +5,21 @@ import Idea from '../models/Idea.js';
 export const getAllIdeas = asyncHandler(async (req, res) => {
   const filter = { status: 'approved' };
 
+  // For admin users, include all ideas with access requests populated
+  if (req.user && req.user.role === 'admin') {
+    const ideas = await Idea.find({})
+      .populate('creator', 'name email role')
+      .populate('accessRequests.investor', 'name email role isApproved')
+      .populate('approvedInvestors', 'name email')
+      .sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      success: true,
+      count: ideas.length,
+      data: ideas,
+    });
+  }
+
   const ideas = await Idea.find(filter)
     .populate('creator', 'name email role')
     .select('title publicSummary category industry stage creator createdAt views')

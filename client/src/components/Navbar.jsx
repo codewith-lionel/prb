@@ -25,27 +25,54 @@ const Navbar = () => {
               Dashboard
             </Link>
             
+            {/* Student Navigation */}
             {user.role === 'student' && (
-              <Link to="/jobs" className="hover:text-primary transition">
-                Jobs
-              </Link>
+              <>
+                <Link to="/ideas" className="hover:text-primary transition">
+                  Ideas
+                </Link>
+                <Link to="/jobs" className="hover:text-primary transition">
+                  Jobs
+                </Link>
+                <Link to="/my-ideas" className="hover:text-primary transition">
+                  My Ideas
+                </Link>
+                <Link to="/my-applications" className="hover:text-primary transition">
+                  Applications
+                </Link>
+              </>
             )}
             
-            {(user.role === 'investor' || user.role === 'student') && (
-              <Link to="/ideas" className="hover:text-primary transition">
-                Ideas
-              </Link>
+            {/* Investor Navigation */}
+            {user.role === 'investor' && (
+              <>
+                <Link to="/ideas" className="hover:text-primary transition">
+                  Ideas
+                </Link>
+                <Link to="/my-requests" className="hover:text-primary transition">
+                  My Requests
+                </Link>
+              </>
             )}
             
+            {/* Employer Navigation */}
             {user.role === 'employer' && (
-              <Link to="/my-jobs" className="hover:text-primary transition">
-                My Jobs
-              </Link>
+              <>
+                <Link to="/post-job" className="hover:text-primary transition">
+                  Post Job
+                </Link>
+                <Link to="/my-jobs" className="hover:text-primary transition">
+                  My Jobs
+                </Link>
+              </>
             )}
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 border-l border-white/10 pl-6">
               <span className="text-sm text-gray-400">
-                {user.name} ({user.role})
+                {user.name}
+              </span>
+              <span className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full capitalize">
+                {user.role}
               </span>
               <button
                 onClick={handleLogout}

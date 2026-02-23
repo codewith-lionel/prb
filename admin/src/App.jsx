@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Ideas from './pages/Ideas';
 import Jobs from './pages/Jobs';
+import AccessRequests from './pages/AccessRequests';
 
 function App() {
   return (
@@ -47,6 +48,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <Jobs />
+              </ProtectedRoute>
+            }
+          />
+          
+          <Route
+            path="/access-requests"
+            element={
+              <ProtectedRoute>
+                <AccessRequests />
               </ProtectedRoute>
             }
           />
